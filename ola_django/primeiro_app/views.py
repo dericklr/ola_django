@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView, ListView, UpdateView, DetailView
+from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView
 from .models import Pessoa
-from .forms import PessoaForm, PessoaUpdateForm
+from .forms import PessoaForm, PessoaUpdateForm, FormDeletePessoa
 from django.urls import reverse_lazy
 
 
@@ -25,5 +25,11 @@ class PessoaUpdateView(UpdateView):
 class PessoaDetailView(DetailView):
     model=Pessoa
     template_name='detalhe_pessoa.html'
+
+class PessoaDeleteView(DeleteView):
+    model=Pessoa
+    form_class=FormDeletePessoa
+    template_name='deletar_pessoa.html'
+    success_url=reverse_lazy('lista_pessoas')  
 
 # Create your views here.

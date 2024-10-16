@@ -1,0 +1,12 @@
+{% block content %}
+
+<h2>Deletar Pessoa</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-primary">Deletar pessoa</button>
+</form>
+
+{% endblock content%}
+<a href="{% url 'lista_pessoas' %}" class="btn btn-secondary">Voltar</a>z

@@ -4,11 +4,17 @@ from .models import Pessoa
 class PessoaForm(forms.ModelForm):
     class Meta:
         model=Pessoa
-        fields=['nome','idade','email']
+        fields='__all__'
 
 
 class PessoaUpdateForm(forms.ModelForm):
     class Meta:
         model=Pessoa
         fields='__all__'
+
+class FormDeletePessoa(forms.ModelForm):
+    class Meta:
+        model=Pessoa
+        fields=[]
+                
         

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Pessoa
+from .models import Pessoa, CategoriaDespesas
 
 class PessoaCreateForm(forms.ModelForm):
     interacao=forms.CharField(widget=forms.Textarea)
@@ -18,4 +18,7 @@ class FormDeletePessoa(forms.ModelForm):
         model=Pessoa
         fields=[]                
 
-        
+class CategoriaDespesasForm(forms.ModelForm):
+    class Meta:
+        model=CategoriaDespesas
+        fields='__all__'

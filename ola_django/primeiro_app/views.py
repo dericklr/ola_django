@@ -2,8 +2,8 @@ from django.forms import BaseModelForm
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView
-from .models import Pessoa, InteracoesPessoa
-from .forms import PessoaCreateForm, PessoaUpdateForm,FormDeletePessoa
+from .models import Pessoa, InteracoesPessoa, CategoriaDespesas
+from .forms import PessoaCreateForm, PessoaUpdateForm,FormDeletePessoa, CategoriaDespesasForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 
@@ -68,3 +68,11 @@ class PessoaDeleteView(DeleteView):
       form_class=FormDeletePessoa
       template_name='deletar_pessoa.html'
       success_url=reverse_lazy('listar_pessoas')
+
+
+
+class CategoriaView(CreateView):
+    model= CategoriaDespesas
+    form_class=CategoriaDespesasForm
+    template_name='categoria_despesas.html'
+    success_url=reverse_lazy('listar_pessoas')

@@ -6,11 +6,12 @@
     <body>
         <h1>Cadastrar nova pessoa</h1>
 
-        <form method="post">
+       <div> <form method="post">
             {% csrf_token %}
             {{ form.as_p}}
             <button type="submit">Cadastrar</button>
         </form>
+        </div>
         <div><a href="{% url 'listar_pessoas' %}">Voltar</a></div>
     </body>
 </html>

@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<h1>Adicionar Nova Categoria de Despesa</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+</form>
+<a href="{% url 'listar_pessoas' %}">Voltar </a>

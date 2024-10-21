@@ -20,3 +20,11 @@ class InteracoesPessoa(models.Model):
     pessoa= models.ForeignKey(Pessoa, on_delete=models.CASCADE)
     data_hora=models.DateTimeField(auto_now_add=True)
     mensagem=models.TextField()
+
+
+class CategoriaDespesas(models.Model):
+    nome = models.CharField(max_length=100)
+    descricao = models.TextField()
+    
+    def __str__(self):
+        return self.name

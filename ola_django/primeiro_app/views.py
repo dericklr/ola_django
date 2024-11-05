@@ -3,19 +3,12 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView
 from .models import Pessoa, InteracoesPessoa, CategoriaDespesas
-<<<<<<< HEAD
-<<<<<<< HEAD
 from .forms import PessoaCreateForm, PessoaUpdateForm,FormDeletePessoa, CategoriaDespesasForm, FormDeleteCategorias, CategoriaUpdateForm
-=======
 from .forms import CategoriaUpdateForm, PessoaCreateForm, PessoaUpdateForm,FormDeletePessoa, CategoriaDespesasForm
->>>>>>> a8f3bd1c98808b5d62bf027961296369efe5f884
-=======
-from .forms import CategoriaUpdateForm, PessoaCreateForm, PessoaUpdateForm,FormDeletePessoa, CategoriaDespesasForm
->>>>>>> a8f3bd1c98808b5d62bf027961296369efe5f884
 from django.urls import reverse_lazy
 from django.contrib import messages
 
-# Create your views here.
+# Create your views
 
 class PessoaCreateView(CreateView):
     model=Pessoa
@@ -99,8 +92,6 @@ class PessoaDeleteView(DeleteView):
 class CategoriaCreateView(CreateView):
     model= CategoriaDespesas
     form_class=CategoriaDespesasForm
-<<<<<<< HEAD
-<<<<<<< HEAD
     template_name='categoria_despesas.html'
     success_url=reverse_lazy('listar_categorias')
 
@@ -130,13 +121,3 @@ class CategoriaDeleteView(DeleteView):
       form_class=FormDeleteCategorias
       template_name='deletar_categoria.html'
       success_url=reverse_lazy('listar_categorias')
-
-
-=======
-    template_name='cadastrar_categoria.html'
-    success_url=reverse_lazy('listar_categorias')
->>>>>>> a8f3bd1c98808b5d62bf027961296369efe5f884
-=======
-    template_name='cadastrar_categoria.html'
-    success_url=reverse_lazy('listar_categorias')
->>>>>>> a8f3bd1c98808b5d62bf027961296369efe5f884

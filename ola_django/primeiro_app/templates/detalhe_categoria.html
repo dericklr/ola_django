@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes da Categoria</title>
+</head>
+<body>
+    <h1>Detalhes da Categoria</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <td><strong>Nome:</strong></td>
+                <td>{{ object.nome }}</td>
+            </tr>
+            <tr>
+                <td><strong>Descrição:</strong></td>
+                <td>{{ object.descricao }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{% url 'editar_categoria' object.id %}">Editar</a>
+    <a href="{% url 'listar_categorias' %}">Voltar</a>
+</body>
+</html>

@@ -4,15 +4,14 @@
         <title>Cadastrar Pessoa</title>
     </head>
     <body>
-        <h1>Cadastrar nova pessoa</h1>
+        <h1>Cadastrar nova categoria</h1>
 
-       <div> <form method="post">
+        <form method="post">
             {% csrf_token %}
             {{ form.as_p}}
             <button type="submit">Cadastrar</button>
         </form>
-        </div>
-        <div><a href="{% url 'listar_pessoas' %}">Voltar</a></div>
-        <div><a href="{%url 'categoria_despesas'%}">Categorias</a></div>
+
+        <a href="{% url 'listar_categorias' %}">Voltar</a>
     </body>
 </html>

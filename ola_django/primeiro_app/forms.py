@@ -13,6 +13,11 @@ class PessoaUpdateForm(forms.ModelForm):
         model=Pessoa
         fields='__all__'
 
+class CategoriaUpdateForm(forms.ModelForm):
+    class Meta:
+        model=CategoriaDespesas
+        fields='__all__'
+
 class FormDeletePessoa(forms.ModelForm):
     class Meta:
         model=Pessoa
@@ -22,3 +27,14 @@ class CategoriaDespesasForm(forms.ModelForm):
     class Meta:
         model=CategoriaDespesas
         fields='__all__'
+
+class CategoriaUpdateForm(forms.ModelForm):
+    class Meta:
+        model=CategoriaDespesas
+        fields='__all__'
+
+
+class FormDeleteCategorias(forms.ModelForm):
+    class Meta:
+        model=CategoriaDespesas
+        fields=[]

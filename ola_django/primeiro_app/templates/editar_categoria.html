@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Categoria</title>
+</head>
+<body>
+    <h1>Editar Categoria</h1>
+
+    {% block content %}
+    <form method="post">
+        {% csrf_token %} 
+        {{ form.as_p }} 
+        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    </form>
+    {% endblock content %}
+
+    <a href="{% url 'listar_categorias' %}" class="btn btn-secondary">Voltar</a>
+</body>
+</html>

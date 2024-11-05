@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView
 from .models import Pessoa, InteracoesPessoa, CategoriaDespesas
-from .forms import PessoaCreateForm, PessoaUpdateForm,FormDeletePessoa, CategoriaDespesasForm
+from .forms import CategoriaUpdateForm, PessoaCreateForm, PessoaUpdateForm,FormDeletePessoa, CategoriaDespesasForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 
@@ -29,6 +29,10 @@ class PessoaListView(ListView):
         model= Pessoa
         template_name='listar_pessoas.html'
 
+class CategoriaListView(ListView):
+      model= CategoriaDespesas
+      template_name='listar_categorias.html'
+
 class PessoaUpdateView(UpdateView):
       model= Pessoa
       template_name='editar_pessoa.html'
@@ -43,6 +47,17 @@ class PessoaUpdateView(UpdateView):
                         mensagem=form.cleaned_data['interacao']
                   )
 
+            messages.success(self.request,'Pessoa cadastrada com sucesso')
+            return response
+      
+class CategoriaUpdateView(UpdateView):
+      model = CategoriaDespesas
+      template_name = 'editar_categoria.html'
+      form_class = CategoriaUpdateForm
+      success_url = reverse_lazy('listar_categorias')
+
+      def form_valid(self, form):
+            response = super().form_valid(form)
             messages.success(self.request,'Pessoa cadastrada com sucesso')
             return response
             
@@ -62,6 +77,10 @@ class PessoaDetailView(DetailView):
             ]
             context['interacoes_formatada']= interacoes_formatada   
             return context
+      
+class CategoriaDetailView(DetailView):
+      model = CategoriaDespesas
+      template_name='detalhe_categoria.html' 
 
 class PessoaDeleteView(DeleteView):
       model= Pessoa
@@ -69,10 +88,8 @@ class PessoaDeleteView(DeleteView):
       template_name='deletar_pessoa.html'
       success_url=reverse_lazy('listar_pessoas')
 
-
-
-class CategoriaView(CreateView):
+class CategoriaCreateView(CreateView):
     model= CategoriaDespesas
     form_class=CategoriaDespesasForm
-    template_name='categoria_despesas.html'
-    success_url=reverse_lazy('listar_pessoas')
+    template_name='cadastrar_categoria.html'
+    success_url=reverse_lazy('listar_categorias')

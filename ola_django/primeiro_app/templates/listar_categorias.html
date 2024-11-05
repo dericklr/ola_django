@@ -5,15 +5,13 @@
 </head>
 <body>
     <h1>Categorias Cadastradas</h1>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     <div><a href="{% url 'categoria_despesas' %}">Cadastrar Categoria</a> </div>
-=======
+    
     <div><a href="{% url 'cadastrar_categoria' %}">Cadastrar Categoria</a> </div>
->>>>>>> a8f3bd1c98808b5d62bf027961296369efe5f884
-=======
+
     <div><a href="{% url 'cadastrar_categoria' %}">Cadastrar Categoria</a> </div>
->>>>>>> a8f3bd1c98808b5d62bf027961296369efe5f884
+
     <table>
         <thead>
             <tr>
@@ -32,15 +30,10 @@
                     <td>
                         <a href="{% url 'detalhe_categoria' categoria.id %}">Visualizar</a> 
                     </td>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                     <td>
                         <a href="{% url 'deletar_categoria' categoria.id %}">Deletar</a>
                     </td>
-=======
->>>>>>> a8f3bd1c98808b5d62bf027961296369efe5f884
-=======
->>>>>>> a8f3bd1c98808b5d62bf027961296369efe5f884
                 </tr>
             {% endfor %}
         </tbody>

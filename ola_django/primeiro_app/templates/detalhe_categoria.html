@@ -1,25 +1,34 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Detalhes da Categoria</title>
+    <link href="{% static 'css/crud/detalhe_pessoas.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <h1>Detalhes da Categoria</h1>
+    <div class = "corpo">
+        <div class = "meioTela">
+            <h1>Detalhes da Categoria</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <td><strong>Nome:</strong></td>
-                <td>{{ object.nome }}</td>
-            </tr>
-            <tr>
-                <td><strong>Descrição:</strong></td>
-                <td>{{ object.descricao }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <table style="margin-bottom: 15px">
+                <tbody>
+                    <tr>
+                        <td class="infoPessoa"><strong>Nome:</strong></td>
+                        <td class="dados">{{ object.nome }}</td>
+                    </tr>
+                    <tr>
+                        <td class="infoPessoa"><strong>Descrição:</strong></td>
+                        <td class="dados">{{ object.descricao }}</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <a href="{% url 'editar_categoria' object.id %}">Editar</a>
-    <a href="{% url 'listar_categorias' %}">Voltar</a>
+            <div style="margin-bottom: 10px">
+                <a href="{% url 'listar_categorias'  %}" class="voltar"><i class="bi bi-arrow-return-left"></i></a>
+                <a href="{% url 'listar_categorias' %}" class="editar"><i class="bi bi-pencil-fill"></i></a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

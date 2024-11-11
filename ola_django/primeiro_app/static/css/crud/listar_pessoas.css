@@ -1,0 +1,93 @@
+body{
+    background-image: linear-gradient(to bottom,rgb(102, 8, 164) ,rgb(19, 3, 34));
+    background-attachment:fixed;
+    place-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.corpo{
+    margin-top: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+    align-items: center;
+    background-color: #b198c22d;
+    width: 80vw;
+    border-radius: 20px;
+    padding-bottom: 15px;
+}
+
+div.corpo h1{
+    padding: 10px;
+    margin: 0;
+}
+
+table{
+    width: 80vw;
+}
+
+
+
+/*Nome das colunas*/
+thead th{
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+}
+
+
+
+/*Infos do Banco de Dados*/
+tbody tr{
+    color: rgb(26, 11, 39);
+    transition: 0.3s;
+    border-radius: 10px;
+}
+tbody tr:hover{
+    background-color: rgba(26, 11, 39, 0.1);
+    cursor: default;
+}
+
+tbody tr td{
+    width: 100vw;
+    color: rgb(26, 11, 39);
+}
+
+
+
+/*Botões de ações*/
+tbody  a i{
+    color: rgb(26, 11, 39);
+    padding: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+tbody a i:hover{
+    opacity: 0.5;
+    color: rgb(235, 235, 235);
+}
+
+
+
+/*Botão de cadastrar pessoa*/
+div.plus{
+    background-color: #b198c22d;
+    border-radius: 200px;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    transition: 0.3s;
+}
+div.plus a i{
+    color: rgb(26, 11, 39);
+    font-size: 40px;
+    transition: 0.3s;
+}
+
+div.plus:active{
+    opacity: 0.7;
+}
+div.plus a i:hover{
+    opacity: 0.5;
+    color: rgb(235, 235, 235);
+    cursor: pointer;
+}

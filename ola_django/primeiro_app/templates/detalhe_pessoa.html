@@ -1,51 +1,59 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Detalhes da Pessoa</title>
+    <link href="{% static 'css/crud/detalhe_pessoas.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <h1>Detalhes da Pessoa</h1>
+    <div class = "corpo">
+        <div class = "meioTela">
+            <h1>Detalhes da Pessoa</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <td><strong>Nome:</strong></td>
-                <td>{{ object.nome }}</td>
-            </tr>
-            <tr>
-                <td><strong>Idade:</strong></td>
-                <td>{{ object.idade }}</td>
-            </tr>
-            <tr>
-                <td><strong>Email:</strong></td>
-                <td>{{ object.email }}</td>
-            </tr>
-            <tr>
-                <td><strong>Tipo Pessoa:</strong></td>
-                <td>{{ object.tipo_pessoa }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="infoPessoa"><strong>Nome:</strong></td>
+                        <td class="dados">{{ object.nome }}</td>
+                    </tr>
+                    <tr>
+                        <td class="infoPessoa"><strong>Idade:</strong></td>
+                        <td class="dados">{{ object.idade }}</td>
+                    </tr>
+                    <tr>
+                        <td class="infoPessoa"><strong>Email:</strong></td>
+                        <td class="dados">{{ object.email }}</td>
+                    </tr>
+                    <tr>
+                        <td class="infoPessoa"><strong>Tipo Pessoa:</strong></td>
+                        <td class="dados">{{ object.tipo_pessoa }}</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <h2>Histórico de Interações</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Data e Hora</th>
-                <th>Mensagem</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for interacao in interacoes_formatada %}
-                <tr>
-                    <td>{{ interacao.data_hora }}</td>
-                    <td>{{ interacao.mensagem }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{% url 'editar_pessoa' object.id %}">Editar</a>
-    <a href="{% url 'listar_pessoas' %}">Voltar para a lista</a>
+            <h2>Histórico de Interações</h2>
+            <table class="interacao">
+                <thead>
+                    <tr>
+                        <th>Data e Hora</th>
+                        <th>Mensagem</th>
+                    </tr>
+                </thead>
+                <tbody class="interacao">
+                    {% for interacao in interacoes_formatada %}
+                        <tr>
+                            <td>{{ interacao.data_hora }}</td>
+                            <td>{{ interacao.mensagem }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div style="margin-bottom: 10px">
+                <a href="{% url 'listar_pessoas' %}" class="voltar"><i class="bi bi-arrow-return-left"></i></a>
+                <a href="{% url 'editar_pessoa' object.id %}" class="editar"><i class="bi bi-pencil-fill"></i></a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,4 +1,11 @@
 # ola_django
+### CRUD de categorias para o Projeto da cadeira de Implementação de Software.
+### Membros do Grupo: Derick Rodrigues, Felipe Perera, Gabriel Wedig e Paulo Schaefer
+### Professor: Raphael Leite Campos
+
+
+
+
 ## Para executar este codigo siga os seguintes passos:
 
 ### 1- pip install django

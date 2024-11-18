@@ -23,8 +23,20 @@ class InteracoesPessoa(models.Model):
 
 
 class CategoriaDespesas(models.Model):
-    nome = models.CharField(max_length=100)
-    descricao = models.TextField()
+    nome = models.CharField(max_length=100, blank=True, null=True)
+    descricao = models.TextField(blank=True, null=True)
+    cat_predefinida=models.CharField( max_length=45, blank=True,null=True,choices=[
+            ('Alimentação', 'alimentação'),
+            ('Compras', 'compras'),
+            ('Contas', 'contas'),
+            ('Lazer', 'lazer')
+        ])
     
     def __str__(self):
         return self.name
+    
+
+class CategoriasReceitas(models.Model):
+    nome=models.CharField(max_length=45)
+    descricao=models.TextField()
+

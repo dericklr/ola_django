@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lista de Categorias</title>
+    <title>Lista de Categorias de receita</title>
     <link href="{% static 'css/crud/listar_pessoas.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
@@ -16,22 +16,20 @@
             <tr>
                 <th>Nome</th>
                 <th>Descrição</th>
-                <th>Pré-Definida</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            {% for categoria in object_list %}
+            {% for receita in object_list %}
             <tr>
                 <div class="info">
-                    <td>{{ categoria.nome  }}</td>
-                    <td>{{ categoria.descricao }}</td>
-                    <td>{{categoria.predefinida}}</td>
+                    <td>{{ receita.nome  }}</td>
+                    <td>{{ receita.descricao }}</td>
                 </div>
                 <td>
-                    <a href="{% url 'editar_categoria' categoria.id %}"><i class="bi bi-pencil-fill"></i></a>
-                    <a href="{% url 'detalhe_categoria' categoria.id %}"><i class="bi bi-eye"></i></a>
-                    <a href="{% url 'deletar_categoria' categoria.id %}"><i class="bi bi-trash"></i></a>
+                    <a href="{% url 'editar_categoria' receita.id %}"><i class="bi bi-pencil-fill"></i></a>
+                    <a href="{% url 'detalhe_categoria' receita.id %}"><i class="bi bi-eye"></i></a>
+                    <a href="{% url 'deletar_receita' receita.id %}"><i class="bi bi-trash"></i></a>
                 </td>
                     
             </tr>
@@ -40,8 +38,6 @@
         </table>
     </div>
     <div class="plus">
-        <a href="{% url 'cadastrar_categoria' %}"><i class="bi bi-plus"></i></a>
+        <a href="{% url 'categoria_receita' %}"><i class="bi bi-plus"></i></a>
     </div>
-    <a href="{% url 'listar_pessoas' %}"> Ir para lista de pessoas</a>
-</body>
 </html>

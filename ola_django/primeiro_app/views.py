@@ -2,9 +2,8 @@ from django.forms import BaseModelForm
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView
-from .models import Pessoa, InteracoesPessoa, CategoriaDespesas
-from .forms import PessoaCreateForm, PessoaUpdateForm,FormDeletePessoa, CategoriaDespesasForm, FormDeleteCategorias, CategoriaUpdateForm
-from .forms import CategoriaUpdateForm, PessoaCreateForm, PessoaUpdateForm,FormDeletePessoa, CategoriaDespesasForm
+from .models import Pessoa, InteracoesPessoa, CategoriaDespesas, CategoriasReceitas
+from .forms import PessoaCreateForm, PessoaUpdateForm,FormDeletePessoa, CategoriaDespesasForm, FormDeleteCategorias, CategoriaUpdateForm, CategoriaReceitaForm, ReceitaUpdateForm, FormDeleteReceita
 from django.urls import reverse_lazy
 from django.contrib import messages
 
@@ -30,9 +29,6 @@ class PessoaListView(ListView):
         model= Pessoa
         template_name='listar_pessoas.html'
 
-class CategoriaListView(ListView):
-      model= CategoriaDespesas
-      template_name='listar_categorias.html'
 
 class PessoaUpdateView(UpdateView):
       model= Pessoa
@@ -51,16 +47,7 @@ class PessoaUpdateView(UpdateView):
             messages.success(self.request,'Pessoa cadastrada com sucesso')
             return response
       
-class CategoriaUpdateView(UpdateView):
-      model = CategoriaDespesas
-      template_name = 'editar_categoria.html'
-      form_class = CategoriaUpdateForm
-      success_url = reverse_lazy('listar_categorias')
 
-      def form_valid(self, form):
-            response = super().form_valid(form)
-            messages.success(self.request,'Pessoa cadastrada com sucesso')
-            return response
             
 class PessoaDetailView(DetailView):
       model=Pessoa
@@ -112,7 +99,7 @@ class CategoriaUpdateView(UpdateView):
 
       def form_valid(self, form):
             response = super().form_valid(form)
-            messages.success(self.request,'Pessoa cadastrada com sucesso')
+            messages.success(self.request,'Categoria cadastrada com sucesso')
             return response
 
 
@@ -121,3 +108,38 @@ class CategoriaDeleteView(DeleteView):
       form_class=FormDeleteCategorias
       template_name='deletar_categoria.html'
       success_url=reverse_lazy('listar_categorias')
+
+
+##Views das categorias de receitas
+
+class ReceitaCreateView(CreateView):
+      model=CategoriasReceitas
+      form_class=CategoriaReceitaForm
+      template_name='categoria_receitas.html'
+      success_url=reverse_lazy('listar_receitas')
+
+class ReceitaListView(ListView):
+      model= CategoriasReceitas
+      template_name='listar_receitas.html'    
+
+class ReceitaDetailView(DetailView):
+      model = CategoriasReceitas
+      template_name='detalhe_receita.html' 
+
+class ReceitaUpdateView(UpdateView):
+      model = CategoriasReceitas
+      template_name = 'editar_receita.html'
+      form_class = ReceitaUpdateForm
+      success_url = reverse_lazy('listar_receita')
+
+      def form_valid(self, form):
+            response = super().form_valid(form)
+            messages.success(self.request,'Categoria cadastrada com sucesso')
+            return response
+
+
+class ReceitaDeleteView(DeleteView):
+      model=CategoriasReceitas
+      form_class=FormDeleteReceita
+      template_name='deletar_receita.html'
+      success_url=reverse_lazy('listar_receita')

@@ -27,8 +27,8 @@
                     <td>{{ receita.descricao }}</td>
                 </div>
                 <td>
-                    <a href="{% url 'editar_categoria' receita.id %}"><i class="bi bi-pencil-fill"></i></a>
-                    <a href="{% url 'detalhe_categoria' receita.id %}"><i class="bi bi-eye"></i></a>
+                    <a href="{% url 'editar_receita' receita.id %}"><i class="bi bi-pencil-fill"></i></a>
+                    <a href="{% url 'detalhe_receita' receita.id %}"><i class="bi bi-eye"></i></a>
                     <a href="{% url 'deletar_receita' receita.id %}"><i class="bi bi-trash"></i></a>
                 </td>
                     
@@ -38,6 +38,6 @@
         </table>
     </div>
     <div class="plus">
-        <a href="{% url 'categoria_receita' %}"><i class="bi bi-plus"></i></a>
+        <a href="{% url 'categoria_receitas' %}"><i class="bi bi-plus"></i></a>
     </div>
 </html>

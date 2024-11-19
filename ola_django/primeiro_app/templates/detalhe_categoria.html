@@ -18,21 +18,25 @@
                         <td class="dados">{{ object.nome }}</td>
                     </tr>
                     <tr>
-                        <td c        <td class="dados">{{ object.predefinida }}</td>
+                    <td class="infoPessoa"><strong>Descrição:</strong></td>
+                        <td class="dados">{{ object.descricao }}</td>
+                        </td>
+                    <tr>
+                        
+                            <td class="info"><Strong>Pré-definida</Strong></td>
+                            <td class="dados">{{object.categoria_predefinida}}</td>
+                    
                     </tr>
                 </tbody>
             </table>
 
             <div style="margin-bottom: 10px">
                 <a href="{% url 'listar_categorias'  %}" class="voltar"><i class="bi bi-arrow-return-left"></i></a>
-                <a href="{% url 'listar_categorias' %}" class="editar"><i class="bi bi-pencil-fill"></i></a>
             </div>
         </div>
     </div>
 </body>
-</html>class="infoPessoa"><strong>Descrição:</strong></td>
-                        <td class="dados">{{ object.descricao }}</td>
-                    </tr>
-                    <tr>
-                        <td class="infoPessoa"><strong>Pré-Definida:</strong></td>
-                
+</html>
+                        
+                    
+                    

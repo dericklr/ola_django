@@ -20,9 +20,9 @@ urlpatterns=[
     path('deletar_categoria/<int:pk>/', CategoriaDeleteView.as_view(), name='deletar_categoria'),
     path('cadastrar_categoria/', CategoriaCreateView.as_view(), name='cadastrar_categoria'),
     path('categoria_receitas/', ReceitaCreateView.as_view(), name='categoria_receitas'),
-    path('cat_receitas/<int:pk>editar/', ReceitaUpdateView.as_view(),name='editar_receita'),
-    path('cat_receitas/<int:pk>/', ReceitaDetailView.as_view(), name='detalhe_receita'),
-    path('listar_receitas/', ReceitaListView.as_view(), name='listar_receita'),
+    path('receitas/<int:pk>editar/', ReceitaUpdateView.as_view(),name='editar_receita'),
+    path('receitas/<int:pk>/', ReceitaDetailView.as_view(), name='detalhe_receita'),
+    path('listar_receita/', ReceitaListView.as_view(), name='listar_receita'),
     path('deletar_receita/<int:pk>/', ReceitaDeleteView.as_view(), name='deletar_receita'),
 
 

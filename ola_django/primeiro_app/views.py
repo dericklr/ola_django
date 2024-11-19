@@ -116,11 +116,11 @@ class ReceitaCreateView(CreateView):
       model=CategoriasReceitas
       form_class=CategoriaReceitaForm
       template_name='categoria_receitas.html'
-      success_url=reverse_lazy('listar_receitas')
+      success_url=reverse_lazy('listar_receita')
 
 class ReceitaListView(ListView):
       model= CategoriasReceitas
-      template_name='listar_receitas.html'    
+      template_name='listar_receita.html'    
 
 class ReceitaDetailView(DetailView):
       model = CategoriasReceitas

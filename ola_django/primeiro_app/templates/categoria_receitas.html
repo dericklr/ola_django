@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cadastrar categorias de receitas</title>
+        <title>Cadastrar categorias de despesas</title>
         <link href="{% static 'css/crud/cadastrar_pessoas.css' %}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     </head>
@@ -14,7 +14,8 @@
             {{ form.as_p}}
             <button type="submit">Cadastrar</button>
         </form>
-
-        <a href="{% url 'listar_categorias' %}">Voltar</a>
+    <div>
+        <a href="{% url 'listar_receita' %}">Voltar</a>
+    </div>
     </body>
 </html>

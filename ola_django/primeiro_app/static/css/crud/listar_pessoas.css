@@ -1,16 +1,16 @@
 body{
-    background-image: linear-gradient(to bottom,rgb(102, 8, 164) ,rgb(19, 3, 34));
-    background-attachment:fixed;
+    background: black;
     place-items: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 div.corpo{
+    color: rgba(235, 235, 235,0.7);
     margin-top: 30px;
     padding-bottom: 10px;
     text-align: center;
     align-items: center;
-    background-color: #b198c22d;
+    background-color: #6608A4;
     width: 80vw;
     border-radius: 20px;
     padding-bottom: 15px;
@@ -38,47 +38,53 @@ thead th{
 
 /*Infos do Banco de Dados*/
 tbody tr{
-    color: rgb(26, 11, 39);
+    color: rgba(235, 235, 235,0.7);
     transition: 0.3s;
     border-radius: 10px;
 }
 tbody tr:hover{
-    background-color: rgba(26, 11, 39, 0.1);
+    background-color:rgba(218, 165, 32, 0.1);
     cursor: default;
 }
 
 tbody tr td{
+    color: rgba(235, 235, 235,0.7);
     width: 100vw;
-    color: rgb(26, 11, 39);
+}
+tbody tr td:hover{
+    color: #DAA520;
+    
 }
 
 
 
 /*Botões de ações*/
 tbody  a i{
-    color: rgb(26, 11, 39);
-    padding: 5px;
+    color: rgba(235, 235, 235,0.7);
     font-size: 18px;
+    padding: 5px;
     transition: 0.3s;
 }
 tbody a i:hover{
+    color: #DAA520;
     opacity: 0.5;
-    color: rgb(235, 235, 235);
 }
 
 
 
 /*Botão de cadastrar pessoa*/
 div.plus{
-    background-color: #b198c22d;
+    background-color: #6608A4;
     border-radius: 200px;
+    margin-bottom: 15px;
     text-align: center;
-    width: 45px;
-    height: 45px;
     transition: 0.3s;
+    margin-top: 15px;
+    height: 45px;
+    width: 45px;
 }
 div.plus a i{
-    color: rgb(26, 11, 39);
+    color: rgba(235, 235, 235,0.7);
     font-size: 40px;
     transition: 0.3s;
 }
@@ -87,7 +93,7 @@ div.plus:active{
     opacity: 0.7;
 }
 div.plus a i:hover{
+    color: #DAA520;
     opacity: 0.5;
-    color: rgb(235, 235, 235);
     cursor: pointer;
 }

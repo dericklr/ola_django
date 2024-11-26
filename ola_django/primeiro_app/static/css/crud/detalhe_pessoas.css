@@ -1,8 +1,8 @@
 body{
-    background-image: linear-gradient(to bottom,rgb(102, 8, 164) ,rgb(19, 3, 34));
-    background-attachment:fixed;
+    background: black;
     place-items: center;
     font-family: Arial, Helvetica, sans-serif;
+    color: rgba(235, 235, 235,0.7);
 }
 .corpo{
     width: 100%;
@@ -15,7 +15,7 @@ body{
     display: block;
     width: 40vw;
     text-align: center;
-    background-color: rgba(177, 152, 194, 0.176);
+    background-color: #6608A4;
     border-radius: 20px;
 
 }
@@ -30,9 +30,11 @@ h2{
 
 .meioTela table tr td{
     width: 20vw ;
+    
+    transition: 0.3s;
 }
 .meioTela table tr:hover{
-    background-color: rgba(26, 11, 39, 0.1);
+    background-color:rgba(218, 165, 32, 0.1);;
     cursor: default;
 }
 
@@ -42,6 +44,9 @@ h2{
 
 .meioTela table td.dados{
     text-align: center;
+}
+.meioTela table td.dados:hover{
+    color: #DAA520;
 }
 
 
@@ -53,9 +58,9 @@ a{
     width: 60px;
     font-size: 25px;
     margin: 0px auto 10px auto;
-    color: rgb(26, 11, 39);
     font-weight: bold;
     transition: 0.3s;
+    color: rgba(235, 235, 235,0.7);
 }
 a.voltar{
     margin-right: 30px;
@@ -64,7 +69,7 @@ a.editar{
     margin-left: 30px;
 }
 a:hover{
-    color: rgb(235, 235, 235);
+    color: #DAA520;
     cursor: pointer;
     opacity: 0.5;
 }

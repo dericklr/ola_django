@@ -1,6 +1,5 @@
 body{
-    background-image: linear-gradient(to bottom,rgb(102, 8, 164) ,rgb(19, 3, 34));
-    background-attachment:fixed;
+    background-color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
@@ -14,19 +13,29 @@ div.novaPessoa{
 
 
 div.cadastraNovaPessoa{
-    display: block;
-    width: 32vw;
+    color: rgba(235, 235, 235,0.7);
     text-align: center;
-    background-color: rgba(177, 152, 194, 0.176);
+    background-color: #6608A4;
+    width: auto;
     border-radius: 20px;
+    padding: 50px;
+    /* box-shadow: #DAA520 0px 5px 15px; */
+    /* box-shadow: black 0px 7px 29px 0px; */
+    box-shadow: black 0px 8px 24px;
 }
 
-label{
+label {
     display: block;
     font-size: 16px;
     font-weight: bold;
     transition: 0.3s;
+    margin-bottom: 10px;
 }
+
+label:hover {
+    color: #DAA520;
+}
+
 input, select{
     border-radius: 20px;
     text-align: center;
@@ -39,6 +48,7 @@ input, select{
 
 input{
     margin-bottom: 10px;
+    padding: 5px 10px;
 }
 textarea{
     height: 50px;
@@ -49,6 +59,7 @@ textarea{
     resize: none;
     background-color: rgba(177, 152, 194, 0.3);
     transition: 0.3s;
+    padding: 5px 10px;
 }
 
 select:active, input:active, textarea:active{
@@ -58,7 +69,7 @@ select:active, input:active, textarea:active{
 a, button{
     font-size: 25px;
     margin: 0px auto 10px auto;
-    color: rgb(26, 11, 39);
+    color: rgba(235, 235, 235,0.7);
     font-weight: bold;
     transition: 0.3s;
 }
@@ -73,7 +84,7 @@ button{
 }
 
 a:hover, button:hover{
-    color: rgb(235, 235, 235);
-    cursor: pointer;
+    color: #DAA520;
     opacity: 0.5;
+    cursor: pointer;
 }
